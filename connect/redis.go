@@ -16,7 +16,7 @@ type RedisConfig struct {
 func NewRedisPool(rc *RedisConfig) (*redis.Pool, error) {
 	p := &redis.Pool{
 		Dial: func() (redis.Conn, error) {
-			redisUrl := fmt.Sprintf("%s:%d", rc.Host, rc.Port)
+			redisUrl := fmt.Sprintf("%s:%s", rc.Host, rc.Port)
 			var c redis.Conn
 			var err error
 			if c, err = redis.Dial("tcp", redisUrl); err != nil {

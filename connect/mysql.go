@@ -17,7 +17,7 @@ type MysqlConfig struct {
 }
 
 func NewMysql(rc *MysqlConfig) (*sql.DB, error) {
-	mysqlUri := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s",
+	mysqlUri := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=%s",
 		rc.User,
 		rc.Password,
 		rc.Host,
